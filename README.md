@@ -15,6 +15,8 @@ $ pip3 install -r requirements.txt
 
 4. Run `python3 lol.py`
 
+5. `cat lol_champion_names.txt` if you want to flood your terminal
+
 ## Contributing
 
 Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/wur3/ping-awards/issues/new).
