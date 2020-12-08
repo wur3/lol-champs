@@ -9,10 +9,8 @@ def main():
         champions = [champ['name'] for champ in json_res['data'].values()]
         print(champions)
         f = open('lol_champion_names.txt', 'w')
-        for champ in champions:
-            f.write(champ)
-            f.write(', ')
-        print("Tailyah")
+        f.write(', '.join(champions))
+        print('Tailyah')
     else:
         print('API call failed')
 
