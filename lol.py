@@ -4,12 +4,16 @@ import json
 
 def main():
     noSpaces = ''
-    while(noSpaces != 'y' and noSpaces != 'n'):
-        noSpaces = input('Do you want the words with spaces?(y/n)\n').strip().lower()
-    if noSpaces == 'y':
-        noSpaces = True
-    elif noSpaces == 'n':
-        noSpaces = False
+    noSpaces = input('Do you want the words with spaces?(y/n)\n').strip().lower()
+    while(True):
+        if noSpaces == 'y':
+            noSpaces = True
+            break
+        elif noSpaces == 'n':
+            noSpaces = False
+            break
+        else:
+            noSpaces = input('Answer with \'y\' or \'n\':\n')
 
     response = requests.get('http://ddragon.leagueoflegends.com/cdn/10.24.1/data/en_US/champion.json')
     if response:
