@@ -1,16 +1,17 @@
 
 import requests
-import pandas
+import json
 
 def main():
     response = requests.get('http://ddragon.leagueoflegends.com/cdn/10.24.1/data/en_US/champion.json')
     if response:
-        df = pandas.read_json(response.content)
-        champions = df.index.values
+        json_res = json.loads(response.content)
+        champions = [champ['name'] for champ in json_res['data'].values()]
+        print(champions)
         f = open('lol_champion_names.txt', 'w')
         for champ in champions:
             f.write(champ)
-            f.write('\n')
+            f.write(', ')
         print("Tailyah")
     else:
         print('API call failed')
