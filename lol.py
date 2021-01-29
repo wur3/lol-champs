@@ -6,16 +6,15 @@ def main():
     noSpaces = ''
     noSpaces = input('Do you want the words with spaces?(y/n)\n').strip().lower()
     while(True):
-        if noSpaces == 'y':
+        if noSpaces == 'n':
             noSpaces = True
             break
-        elif noSpaces == 'n':
+        elif noSpaces == 'y':
             noSpaces = False
             break
         else:
             noSpaces = input('Answer with \'y\' or \'n\':\n')
-
-    response = requests.get('http://ddragon.leagueoflegends.com/cdn/10.24.1/data/en_US/champion.json')
+    response = requests.get('http://ddragon.leagueoflegends.com/cdn/11.2.1/data/en_US/champion.json')
     if response:
         json_res = json.loads(response.content)
         champions = [champ['name'] for champ in json_res['data'].values()]
