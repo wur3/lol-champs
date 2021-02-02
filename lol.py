@@ -31,7 +31,7 @@ def main():
         formatted = ',\n'.join(champions)
         if noSpaces:
             formatted = formatted.replace(' ','')
-        print("Check lol_chapmion_names.txt")
+        print("Check lol_champion_names.txt")
         f.write(formatted)
     else:
         print('API call for champions failed')
